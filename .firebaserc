@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "angular5serviceworker",
+    "default": "angularwithfirebase-fb4c2"
+  }
+}
