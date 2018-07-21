@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { EventComponent } from "./event/event.component";
+import { RouteGuard } from "./shared/route.guard";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "events" },
@@ -12,6 +13,11 @@ const routes: Routes = [
   {
     path: "login",
     loadChildren: "../app/login/login.module#LoginModule"
+  },
+  {
+    path: "special",
+    loadChildren: "../app/special/special.module#SpecialModule",
+    canActivate: [RouteGuard]
   }
 ];
 

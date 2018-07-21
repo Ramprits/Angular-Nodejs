@@ -7,11 +7,19 @@ import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
 import { NavigationComponent } from "./navigation/navigation.component";
 import { EventModule } from "./event/event.module";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { TokenInterceptor } from "./shared/token.interceptor";
 
 @NgModule({
   declarations: [AppComponent, NavigationComponent],
   imports: [BrowserModule, AppRoutingModule, EventModule],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
