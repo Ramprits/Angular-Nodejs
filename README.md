@@ -1,4 +1,6 @@
 # WcmApp
+sudo sysctl fs.inotify.max_user_watches=582222 && sudo sysctl -p
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
