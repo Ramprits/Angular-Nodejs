@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { EventsService } from "../event/events.service";
 import { EventData } from "../event/event.model";
 import { HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
+import { SpecialService } from "./special.service";
 
 @Component({
   selector: "app-special",
@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
 export class SpecialComponent implements OnInit {
   specials: EventData[];
   constructor(
-    private _specialService: EventsService,
+    private _specialService: SpecialService,
     private _router: Router
   ) {}
 

@@ -30,4 +30,9 @@ export class AuthService {
   logout() {
     localStorage.removeItem("token");
   }
+
+  authenticated(res) {
+    localStorage.setItem("token", res);
+    this._router.navigate(["/events"]);
+  }
 }
